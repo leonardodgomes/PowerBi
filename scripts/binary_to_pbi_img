@@ -1,0 +1,38 @@
+1. Open the Power Query
+
+2. Craeate a new blank query and paste the code bellow
+
+    let
+        BinatyToPbiImg = (BinaryContent as binary) as text=>
+    let
+        Base64 = "data:image/jpg;base64, " & Binary.ToText(BinaryContent, BinaryEncoding.Base64) 
+    in
+        Base64
+    in
+        BinatyToPbiImg
+    
+3. Go to New Soure 
+4. Choose Folder
+5. Select the Folder
+6. Filter the extension colun to kkep just the image files
+7. Keep the columns: Content, Name and Folder Path
+8. Remove the extension from name column
+9. Invoke the custom function 
+  9.1. Define the name of the column
+  9.2. Choose the function BinaryTo PbiImg
+  9.3. Select the Content column
+10. Merge(join) the auxiliar table with the table that have the reference for tjhe images
+11. Disable the load of the auxiliar table
+12 .Close and Apply the changes
+13 .Expand in the Table that have the column with the image 
+14 .Select the fild with the image and in the ribbon co to Data category and chooose Image URL
+
+Notes: (IMPORTANT)
+
+1.  Power BI allows a maximum string length of 32,766 characters in a column. In the case of a large image, if the string contains more than 32,766 characters, 
+    it truncates the rest of the characters. You might get an inconsistent image due to this.
+    
+2.  Select None in the Style Presets of the table visual, to be transparent (backgrounnd)
+
+
+
