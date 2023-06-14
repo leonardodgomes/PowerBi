@@ -9,4 +9,4 @@ Steps:
   
 Functionalities:
   Work with image in data sets
-  
+  Create a calendar table in PowerQuery
